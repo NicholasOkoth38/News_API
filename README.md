@@ -29,7 +29,7 @@ As a user I would like to:
 
 ## SetUp / Installation Requirements
 ### Prerequisites
-* python3.6
+* python3.8
 * pip
 * virtualenv
 
@@ -42,7 +42,7 @@ As a user I would like to:
 ## Running the Application
 * Creating the virtual environment
 
-        $ python3.6 -m venv --without-pip virtual
+        $ 8 -m venv --without-pip virtual
         $ source virtual/bin/env
         $ curl https://bootstrap.pypa.io/get-pip.py | python
 
@@ -73,7 +73,7 @@ As a user I would like to:
 ## Testing the Application
 * To run the tests for the class files:
 
-        $ python3.6 manage.py tests
+        $ python3.8 manage.py tests
 
 ## Technologies Used
 * Python3.8
