@@ -1,89 +1,43 @@
-# News API
+# Project Name
+* News-API
+# Description
+This is a web application than has list and preview news articles from various sources. In this platform, users can review news that had passed incase they were not present on the time of news presentation.
 
-## Built By [Nicholas ]()
+# Author 
+* Nicholas Owino
 
-## Description
-Nick news is a web application that displays a list of various news sources. On choosing a news source, it will preview the top news articles of the day. Clicking a news article will redirect the user to read it fully from the news source. It achieves this by using the [News API](https://newsapi.org/).
+# User Story
+* Users can see various news sources on the homepage of the application.
+* Users can select a news source and see all news articles from the selected news source in the application.
+* Users can see the image, description and the time a news article was created.
+* Users can click on an article and read the full article on the source website.
 
-You can view the site at:[Heroku](https://emdeenews.herokuapp.com/)
+# Specification
+* View General News
 
-## User Stories
-These are the behaviours/features that the application implements for use by a user.
+# Cloning
+* $ git clone 
+* $ cd News-Broadcast
 
-As a user I would like to:
-* See various news sources
-* Select the ones they prefer
-* See the top news articles from that news source
-* See the image, description and time the news article was created
-* Click on an article and read it fully from the news source
-
-## Specifications
-| Behaviour | Input | Output |
-| :---------------- | :---------------: | ------------------: |
-| Display news sources | **On page load** | List of various news sources is displayed in a list |
-| Display tabs with news by category | **On Tab link click** | Clickable links to open news based on category |
-| Display articles from a news source | **Click a news source** | Redirected to a page with articles from the source |
-| Display the preview of an article | **On page load** | Each article displays an image,description and publication date |
-| To Read an entire article  | **Click an article** | Redirected to the news source's site to read the entire article |
-
-
-## SetUp / Installation Requirements
-### Prerequisites
-* python3.8
-* pip
-* virtualenv
-
-### Cloning
-* In your terminal:
-
-        $ git clone https://github.com/NicholasOkoth38/News_API/
-        $ cd NewsPI
-
-## Running the Application
-* Creating the virtual environment
-
-        $ 8 -m venv --without-pip virtual
-        $ source virtual/bin/env
-        $ curl https://bootstrap.pypa.io/get-pip.py | python
-
-* Installing Flask and other Modules
-
-        $ python3.8 -m pip install Flask
-        $ python3.8 -m pip install Flask-Bootstrap
-        $ python3.8 -m pip install Flask-Script
-
-* Setting up the API Key
-
-        To be able to gather article info from the News API you will need an API Key.
-
-        * Visit https://newsapi.org/ and register for an API key.
-        * In the root directory of the project folder create a file: start.sh
-        * Insert the following info into it:
-
-                export NEWS_API_KEY='<Your-Api-Key>'
-                python3.8 manage.py server
-
-        * Insert the API Key you received from News Api where <Your-Api-Key> is.
-
-* To run the application, in your terminal:
-
-        $ chmod +x start.sh
-        $ ./start.sh
-
-## Testing the Application
-* To run the tests for the class files:
-
-        $ python3.8 manage.py tests
-
-## Technologies Used
-* Python3.8
+# Technologies
+* Python3.6
 * Flask
+* HTML
+* Bootstrap
 
-## License
+# Running the Application
+* $ chmod a+x start.sh
+* $ ./start.sh
 
-Copyright (c) 2021 Nicholas
+# Contact
+Reach me out on:
+* Email-nicholasko38@gmail.com
+* Linkedin-Nicholas Owino
 
-------------
+# MINT License
+MINT[License]
+
+Copyright (c) [2021] [Nicholas Owino]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

@@ -1,25 +1,15 @@
-<!-- {% macro displaySources(source_results_list) %}
-{% for source in sources %}
-<div class="main">
-  <div class="container-fluid">
-    <div class="row">
-
-      <div class="col-3">
-        <div class="card ">
-          <div class="card-header">
-            <h4>Browse News Sources</h4>
-          </div>
-          <div class="list-group list-group-flush scrolly">
-            <ul>
-              {% for source in sources %}
-              <a href="/article/{{source.id}}">
-                <p class="text-capitalize text-muted">{{source.id}}</p>
-              </a>
-
-            </ul>
-          </div>
-
+{% macro sourceCategories(categories) %}
+{% for category in categories %}
+<div class="col-md-3 card">
+    <div class="row mt">
+        <div class="col-md-5 source-name">
+            <h4> {{category.name}} </h4>
         </div>
-      </div>
-
-{% endfor %} {% endmacro %} -->
+        <div class="col-md-7 source-details">
+            <p> {{category.description|truncate(100)}}</p>
+            <a class="btn btn-default" href="/articles/{{category.id}}&20">Read Articles</a>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endmacro %}

@@ -1,35 +1,32 @@
-from flask import render_template,request,redirect,url_for
-from . import main
-from flask import render_template,request,redirect,url_for
-from ..request import get_source,article_source,get_category,get_headlines
 
-#our views
+from flask import render_template, redirect, url_for, request
+from . import main
+from ..models import Sources
+from ..requests import get_articles, get_sources
+
 @main.route('/')
 def index():
     '''
-    Root function returning index/home page with data
+    View root page function that returns the index page and its data
     '''
-    source= get_source()
-    headlines = get_headlines()
-    return render_template('index.html',sources=source, headlines = headlines)
+    title = "News Broadcast"
 
-@main.route('/article/<id>')
-def article(id):
+    business_category = get_sources('business')
+    entertainment_category = get_sources('entertainment')
+    sports_category = get_sources('sports')
+    technology_category = get_sources('technology')
+    science_category = get_sources('science')
+    health_category = get_sources('health')
 
-    '''
-    View article page function that returns the various article details page and its data
-    '''
-    # title= 'Articles'
-    articles = article_source(id)
-    return render_template('article.html',articles= articles,id=id )
+    return render_template('index.html', title = title, business = business_category, entertainment = entertainment_category, sports = sports_category,technology = technology_category, science = science_category, health = health_category)
 
-@main.route('/categories/<cat_name>')
-def category(cat_name):
-    '''
-    function to return the categories.html page and its content
-    '''
-    category = get_category(cat_name)
-    title = f'{cat_name}'
-    cat = cat_name
 
-    return render_template('categories.html',title = title,category = category, cat= cat_name)
+@main.route('/articles/<source_id>&<int:per_page>')
+def articles(source_id, per_page):
+    '''
+    Function that returns articles based on their sources
+    '''
+    news_source = get_articles(source_id, per_page)
+    title = f'{source_id} | All Articles'
+
+    return render_template('articles.html', title = title, name = source_id, news = news_source)

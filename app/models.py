@@ -1,45 +1,27 @@
-class Article:
+class Sources:
     '''
-    Class that instantiates objects of the news article objects of the news sources
+    Class that defines the sources objects
     '''
-    def __init__(self,author,description,time,url,image,title):
-        self.author = author
-        self.description = description
-        self.time = time
-        self.url = url
-        self.image = image
-        self.title = title
-
-class Category:
-    '''
-    Class that instantiates objects of the news categories objects of the news sources
-    '''
-    def __init__(self,author,description,time,url,image,title):
-        self.author = author
-        self.description = description
-        self.time = time
-        self.url = url
-        self.image = image
-        self.title = title
-
-class Source:
-    '''
-    Source class to define source objects
-    '''
-    def __init__(self,id,name,description,url):
+    def __init__(self, id, name, description, url, category, country):
+        '''
+        Function that initiates the source class
+        '''
         self.id = id
         self.name = name
         self.description = description
         self.url = url
+        self.category = category
+        self.country = country
 
-class Headlines:
+
+class Articles:
     '''
-    Class that instantiates objects of the headlines categories objects of the news sources
+    Class that defines the article objects
     '''
-    def __init__(self,author,description,time,url,image,title):
+    def __init__(self, author, title, description, url, urlToImage, publishedAt):
         self.author = author
-        self.description = description
-        self.time = time
-        self.url = url
-        self.image = image
         self.title = title
+        self.description = description
+        self.url = url
+        self.urlToImage = urlToImage
+        self.publishedAt = publishedAt
