@@ -13,7 +13,7 @@ or news source given or searched.
 You need the following to start working on this project:
 On your local systems;
 
-1. Python version 3.8
+1. Python version 3
 2. Flask
 3. Pip
 4. Virtual Environment(venv)
