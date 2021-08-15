@@ -1,32 +1,28 @@
-
-from flask import render_template, redirect, url_for, request
+from flask import render_template,request,redirect,url_for
 from . import main
+from ..requests import get_sources,get_articles
 from ..models import Sources
-from ..requests import get_articles, get_sources
 
+#views
 @main.route('/')
 def index():
-    '''
-    View root page function that returns the index page and its data
-    '''
-    title = "News Broadcast"
+	'''
+	view root page function that returns the index the page and its data
+	'''
+	sources = get_sources('business')
+	sports_sources = get_sources('sports')
+	technology_sources = get_sources('technology')
+	entertainment_sources = get_sources('entertainment')
+	title = "Breaking News"
 
-    business_category = get_sources('business')
-    entertainment_category = get_sources('entertainment')
-    sports_category = get_sources('sports')
-    technology_category = get_sources('technology')
-    science_category = get_sources('science')
-    health_category = get_sources('health')
+	return render_template('index.html',title = title, sources = sources,sports_sources = sports_sources,technology_sources = technology_sources,entertainment_sources = entertainment_sources)
 
-    return render_template('index.html', title = title, business = business_category, entertainment = entertainment_category, sports = sports_category,technology = technology_category, science = science_category, health = health_category)
+@main.route('/sources/<id>')
+def articles(id):
+	'''
+	view articles page
+	'''
+	articles = get_articles(id)
+	title = f' | {id}'
 
-
-@main.route('/articles/<source_id>&<int:per_page>')
-def articles(source_id, per_page):
-    '''
-    Function that returns articles based on their sources
-    '''
-    news_source = get_articles(source_id, per_page)
-    title = f'{source_id} | All Articles'
-
-    return render_template('articles.html', title = title, name = source_id, news = news_source)
+	return render_template('articles.html',title= title,articles = articles)

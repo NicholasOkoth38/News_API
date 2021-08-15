@@ -1,28 +1,55 @@
+{% extends 'base.html'%}
+{% block content%}
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<style>
+	#background {
+		background-image: url('../static/markus-spiske-2G8mnFvH8xk-unsplash.jpg');
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+</style>
+<div class="container" style="font-size:20px;" id="background">
 
-{% extends 'base.html' %} 
-{% block content %}
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-12">
-        </div>
-    </div>
-    <div class="row">
-        {% for article in articles %}
-        <div class="col-md-3">
-            <a href={{article.url}} target="_blank">
-                <img class="img-fluid img-thumbnail" src={{article.urlToImage}} alt="pic">
-            </a>
-            <div class="card">
-                <h4>{{article.name}}</h4>
-                <p>by {{article.author}} </p>
-                <hr>
-                <p> {{article.description}}...
-                    <a href={{article.url}} target="_blank">Read More</a>
-                </p>
-                <p>Published on {{article.publishedAt}}</p>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
+	<!-- Popular movie section  -->
+	<h3 style="font-family: 'align-self: start;', cursive; font: size 40px;px; color:white;"> Top Headlines</h3>
+	{% for article_row in articles | batch(4)%}
+
+	<div class="row">
+
+		{% for article in article_row %}
+
+		<div class="col-md-3">
+			<div class="thumbnail">
+				<a href="{{article.url}}" target="_blank">
+					<img src="{{article.image}}" alt="{{article.title}}" class="img-responsive" styles="height:30px">
+				</a>
+				<div class="caption">
+					<h4><a href="{{article.url}}" target="_blank">{{article.title |truncate(35)}}</a></h4>
+					<p>{{article.description | truncate(80)}}</p>
+					<a href="{{article.url}}" target="_blank"> Read More</a>
+
+
+				</div>
+				<div class="footer">
+					Published at: {{article.date}}
+
+
+				</div>
+			</div>
+
+
+		</div>
+
+		{% endfor %}
+
+	</div>
+
+	{% endfor %}
+
+
 </div>
-{% endblock%}
+
+
+{%endblock%}

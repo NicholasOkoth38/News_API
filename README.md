@@ -1,46 +1,43 @@
-# Project Name
-* News-API
-# Description
-This is a web application than has list and preview news articles from various sources. In this platform, users can review news that had passed incase they were not present on the time of news presentation.
+# News-Api Application
 
-# Author 
-* Nicholas Owino
+## Nicholas Owino
 
-# User Story
-* Users can see various news sources on the homepage of the application.
-* Users can select a news source and see all news articles from the selected news source in the application.
-* Users can see the image, description and the time a news article was created.
-* Users can click on an article and read the full article on the source website.
+### Description
 
-# Specification
-* View General News
+This is a news apliction where a user gets any news update or breaking news from any site
+or news source given or searched.
 
-# Cloning
-* $ git clone 
-* $ cd News-Broadcast
+### Prerequisites
 
-# Technologies
-* Python3.6
-* Flask
-* HTML
-* Bootstrap
+You need the following to start working on this project:
+On your local systems;
 
-# Running the Application
-* $ chmod a+x start.sh
-* $ ./start.sh
+1. Python version 3.8
+2. Flask
+3. Pip
+4. Virtual Environment(venv)
+5. A text editor
 
-# Contact
-Reach me out on:
-* Email-nicholasko38@gmail.com
-* Linkedin-Nicholas Owino
+### Project SetUp
 
-# MINT License
-MINT[License]
+1. Git clone 
+2. Navigate to the folder using terminal
+3. Run the file
 
-Copyright (c) [2021] [Nicholas Owino]
+## Running The Application
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+In your terminal, run the following commands;
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+$ chmod a+x start.sh
+$ ./start.sh
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+### Technologies Used
+
+1. Python3.8
+2. Git
+3. Bootstrap
+4. Flask
+
+# Live Site
+
+View [live](/)
