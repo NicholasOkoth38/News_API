@@ -40,4 +40,4 @@ $ ./start.sh
 
 # Live Site
 
-View [live](/)
+View [live](https://nick-news.herokuapp.com//)
